@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class = "column is-one-fifth">
-                <div class = "is-text is-pulled-right">
+                <div class = "button is-pulled-right">
                     <h1>Carrinho</h1>
                 </div>
             </div>
