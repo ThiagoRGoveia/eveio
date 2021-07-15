@@ -1,32 +1,24 @@
 <template>
-    <div>
-      <!-- <div class="container">
-          <div class="columns">
-            <div class="column">
-                <b-input v-model="data" />
-            </div>
-            <div class="column">
-                <b-input v-model="data" />
-            </div>
-          </div>
-      </div> -->
-
+    <div class="eveio">
+       <CartContainer
+        :isActive="isCartActive"
+        @close="handleClose"
+        />
         <section>
-            <Header/>
+            <Header @open="handleOpen"/>
         </section>
 
         <section>
             <Carousel :gray="false" />
         </section>
-        
+
         <section>
-          <product-list />
+          <ProductList />
         </section>
 
        <section>
            <BottomPart/>
        </section>
-
     </div>
 </template>
 
@@ -35,31 +27,35 @@ import BottomPart from '@/components/BottomPart.vue'
 import Carousel from '@/components/Carousel.vue'
 import ProductList from './components/ProductList.vue'
 import Header from '@/components/Header.vue'
+import CartContainer from '@/components/CartContainer.vue'
+
 export default {
   name: 'App',
   data() {
       return {
-        inputValue: 'oi',
+        isCartActive: false
       }
   },
   methods: {
+    handleClose () {
+      this.isCartActive = false
+    },
+    handleOpen () {
+      this.isCartActive = true
+    }
   },
   components: {
     Carousel,
     ProductList,
     Header,
-    BottomPart
+    BottomPart,
+    CartContainer
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.eveio {
+  position: relative;
 }
 </style>

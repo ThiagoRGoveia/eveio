@@ -1,0 +1,62 @@
+id: 10
+nome: Rum Bacardi Carta Blanca 980ml
+preço: R$47,90
+unidade: un
+imagem: bacardi_cartablanca.jpg
+categoria: bebidas
+
+id: 11
+nome: Cerveja Brahma Duplo Malte lata 350ml
+preço: R$2,99
+unidade: un
+imagem: BrahmaDuploMalte.jpg
+categoria: bebidas
+
+id: 12
+nome: Cajuzinho USP Caaso
+preço: R$0,00
+unidade: caixa d'água
+imagem: cajuzinho.jog
+categoria: bebidas
+
+id: 13
+nome: Cerveja Heineken Long Neck 330ml
+preço: R$5,19
+unidade: un
+imagem: heineken.jpg
+categoria: bebidas
+
+id: 14
+nome: Whiskey Jack Daniels 1L
+preço: R$119,90
+unidade: un
+imagem:jack_daniels.jpg
+categoria: bebidas
+
+id: 15
+nome: Vinho Brasileiro Jurupinga 975ml
+preço: R$29,90
+unidade: un
+imagem: jurupinga.jpg
+categoria: bebidas
+
+id: 16
+nome: Whiskey Red Label 1L
+preço: R$79,90
+unidade: un
+imagem: red_label.jpg
+categoria: bebidas
+
+id: 17
+nome: Saquê Azuma Kirin Soft 740ml
+preço: R$18,83
+unidade: un
+imagem: saque.jpg
+categoria: bebidas
+
+id: 18
+nome: Vodka Smirnoff 1L
+preço: R$32,90
+unidade: un
+imagem: smirnoff.jpg
+categoria: bebidas

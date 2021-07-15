@@ -1,0 +1,62 @@
+id: 1
+nome: Alcatra Kg
+preço: R$48,95
+unidade: Kg
+imagem: alcatra.jpg
+categoria: carnes
+
+id: 2
+nome: Bisteca Suína Kg
+preço: R$27,95
+unidade: Kg
+imagem: bisteca_suina.jpg
+categoria: carnes
+
+id: 3
+nome: Carne Moída 1Kg
+preço: R$18,79
+unidade: un
+imagem: carne_moida.jpg
+categoria: carnes
+
+id: 4
+nome: Contra Filé Kg
+preço: R$46,95
+unidade: Kg
+imagem: contra_file.jpg
+categoria: carnes
+
+id: 5
+nome: Filé de Frango 1Kg
+preço: R$22,59
+unidade: un
+imagem: file_de_frango.jpg
+categoria: carnes
+
+id: 6
+nome: File Mignon Kg
+preço: R$69,95
+unidade: Kg
+imagem: file_mignon.jpg
+categoria: carnes
+
+id: 7
+nome: Filé Tilápia 800g
+preço: R$39,90
+unidade: g
+imagem: file_tilapia.jpg
+categoria: carnes
+
+id: 8
+nome: Linguiça Toscana Kg
+preço: R$19,56
+unidade: Kg
+imagem: linguica.jpg
+categoria: carnes
+
+id: 9
+nome: Picanha Kg
+preço: R$79,95
+unidade: Kg
+imagem: picanha.jpg
+categoria: carnes

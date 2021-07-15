@@ -15,9 +15,12 @@
                 </div>
             </div>
             <div class = "column is-one-fifth">
-                <div class = "button is-pulled-right">
-                    <h1>Carrinho</h1>
-                </div>
+                <b-button
+                  class = "is-pulled-right"
+                  @click="handleClick"
+                >
+                    Carrinho
+                </b-button>
             </div>
         </div>
         </div>
@@ -30,6 +33,11 @@
 export default {
   name: 'Header',
   props: {
+  },
+  methods: {
+    handleClick() {
+      this.$emit('open')
+    }
   }
 }
 </script>
