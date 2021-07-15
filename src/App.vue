@@ -1,31 +1,17 @@
 <template>
     <div class="eveio">
-       <CartContainer
+      <CartContainer
         :isActive="isCartActive"
         @close="handleClose"
-        />
-        <section>
-            <Header @open="handleOpen"/>
-        </section>
-
-        <section>
-            <Carousel :gray="false" />
-        </section>
-
-        <section>
-          <ProductList />
-        </section>
-
-       <section>
-           <BottomPart/>
-       </section>
+      />
+      <Header @open="handleOpen"/>
+      <router-view name="content" :key="$route.fullPath" />
+      <BottomPart/>
     </div>
 </template>
 
 <script>
 import BottomPart from '@/components/BottomPart.vue'
-import Carousel from '@/components/Carousel.vue'
-import ProductList from './components/ProductList.vue'
 import Header from '@/components/Header.vue'
 import CartContainer from '@/components/CartContainer.vue'
 
@@ -45,11 +31,13 @@ export default {
     }
   },
   components: {
-    Carousel,
-    ProductList,
     Header,
     BottomPart,
     CartContainer
+  },
+  created () {
+    console.log(this.$route)
+
   }
 }
 </script>
