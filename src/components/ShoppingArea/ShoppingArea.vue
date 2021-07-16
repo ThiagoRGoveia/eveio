@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Carousel from '@/components/Carousel.vue'
-import ProductList from '@/components/ProductList.vue'
+import Carousel from '@/components/ShoppingArea/Carousel.vue'
+import ProductList from '@/components/ShoppingArea/ProductList.vue'
 export default {
   name: 'ShoppingArea',
   components: {

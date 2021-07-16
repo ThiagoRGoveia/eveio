@@ -13,7 +13,7 @@
 <script>
 import BottomPart from '@/components/BottomPart.vue'
 import Header from '@/components/Header.vue'
-import CartContainer from '@/components/CartContainer.vue'
+import CartContainer from '@/components/ShoppingCart/CartContainer.vue'
 
 export default {
   name: 'App',
@@ -34,10 +34,6 @@ export default {
     Header,
     BottomPart,
     CartContainer
-  },
-  created () {
-    console.log(this.$route)
-
   }
 }
 </script>

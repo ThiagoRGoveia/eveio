@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Cart from '@/Cart.vue'
+import Cart from '@/components/ShoppingCart/Cart.vue'
 
 export default {
   name: 'CartContainer',

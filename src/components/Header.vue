@@ -30,15 +30,9 @@
 </template>
 
 <script>
+
 export default {
   name: 'Header',
-  props: {
-  },
-  methods: {
-    handleClick() {
-      this.$emit('open')
-    }
-  }
 }
 </script>
 
