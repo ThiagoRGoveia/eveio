@@ -2,9 +2,7 @@
 <div class="container">
   <div class="columns is-multiline">
     <div class="column is-one-third" v-for="product in products" :key="product.id">
-      <product :img="product.image"  />
-      <button @click="handleClick">ADD</button>
-      <button @click="handleClick">REMOVE</button>
+      <product @add="handleAdd" :product="product"  />
     </div>
   </div>
 </div>
@@ -25,8 +23,8 @@ export default {
     Product
   },
   methods: {
-    handleClick () {
-      ShoppinList.addItem({id: Math.random() * 100})
+    handleAdd (product) {
+      ShoppinList.addItem(product)
     }
   }
 }

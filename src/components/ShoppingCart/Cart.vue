@@ -1,8 +1,8 @@
 <template>
     <div>
       <section>
-        <div v-for="item in Array.from(Array(intensCount).keys())" :key="item">
-          OI
+        <div v-for="product in list" :key="product.id">
+          <product :product="product" />
         </div>
       </section>
 
@@ -11,8 +11,10 @@
 
 <script>
 import ShoppinList from '@/components/ShoppingList.js';
+import Product from '@/components/ShoppingCart/Product.vue';
 
 export default {
+  components: { Product },
   name: 'Cart',
   data() {
       return {
@@ -25,8 +27,7 @@ export default {
       this.$emit('open')
     },
     handleItemAdd() {
-      console.log('itemAdd')
-      this.intensCount++
+      this.list = ShoppinList.getItems()
     },
     handleItemRemove() {
       console.log('itemRemove')

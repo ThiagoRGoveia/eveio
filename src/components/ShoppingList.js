@@ -5,7 +5,12 @@ class ShoppingList {
   }
 
   addItem(item) {
-    this.items.push(item);
+    const itemIndex = this.items.findIndex(i => i.id === item.id)
+    if (itemIndex === -1) {
+      this.items.push(item);
+    } else {
+      this.items[itemIndex].ammount = item.ammount;
+    }
     this.itemWatcher['add'].forEach(watcher => watcher(item));
   }
 

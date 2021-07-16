@@ -37,6 +37,6 @@ export default {
     transform: translateX(0);
   }
   .drawer.inactive {
-    transform: translateX(1000px);
+    transform: translateX(10000px);
   }
 </style>
