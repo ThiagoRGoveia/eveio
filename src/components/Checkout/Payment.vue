@@ -7,12 +7,13 @@
             <b-field label="Nome">
               <b-input
                 @input="this.$emit('update:name')"
+                v-model="name"
                 type="text"
               />
             </b-field>
             <b-field label="Sobrenome">
               <b-input
-                @input="this.$emit('update:surname')"
+                v-model="surname"
                 type="text"
               />
             </b-field>
@@ -20,13 +21,13 @@
           <b-field group>
             <b-field label="Número do cartão">
               <b-input
-                @input="this.$emit('update:cardNumber')"
+                v-model="cardNumber"
                 type="text"
               />
             </b-field>
             <b-field label="CVV">
               <b-input
-                @input="this.$emit('update:securityNumber')"
+                v-model="securityNumber"
                 type="text"
               />
             </b-field>
@@ -34,6 +35,7 @@
           <b-field label="Data de vencimento">
             <!-- TENTAR ABRIR COM TECLADO -->
             <b-datepicker
+                v-model="date"
                 :show-week-number="showWeekNumber"
                 locale="pt-BR"
                 icon="calendar-today"
@@ -55,11 +57,28 @@
 </template>
 
 <script>
+import CheckoutInformation from '@/components/Checkout/CheckoutInformation.js'
+
 export default {
   name: 'CheckoutPayment',
+  data () {
+    return {
+      name: '',
+      surname: '',
+      cardNumber: '',
+      securityNumber: '',
+      date: null
+    }
+  },
   methods: {
     handleSubmition () {
-
+      CheckoutInformation.setUserData({
+        name: this.name,
+        surname: this.surname,
+        cardNumber: this.cardNumber,
+        securityNumber: this.securityNumber,
+        date: this.date
+      })
     }
   }
 }

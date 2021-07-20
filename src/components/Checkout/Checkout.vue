@@ -29,6 +29,7 @@ import Cart from '@/components/ShoppingCart/Cart.vue'
 import CheckoutForm from '@/components/Checkout/CheckoutForm.vue'
 import Divider from '@/components/Checkout/Divider.vue'
 import FinishByPhoneNumber from '@/components/Checkout/FinishByPhoneNumber.vue'
+import CheckoutInformation from '@/components/Checkout/CheckoutInformation.js'
 export default {
   name: 'Checkout',
   data () {
@@ -48,7 +49,23 @@ export default {
   },
   methods: {
     handleSubmition () {
-
+      CheckoutInformation.setUserData({
+        paymentMethod: this.paymentMethod,
+        address: this.address,
+        city: this.city,
+        state: this.state,
+        zipCode: this.zipCode
+      })
+    }
+  },
+  created () {
+    const data = CheckoutInformation.getUserData()
+    if (Object.keys(data).length > 0) {
+      this.paymentMethod = data.paymentMethod
+      this.address = data.address
+      this.city = data.city
+      this.state = data.state
+      this.zipCode = data.zipCode
     }
   }
 }
