@@ -10,8 +10,9 @@
             <div class = "column is-three-fifths is-0-desktop-only">
               <div class="field">
                 <div class="control">
-                  <input class="input" type="search" placeholder="Exemplo: carne de soja">
+                  <b-input v-model="productFilter" type="search" placeholder="Exemplo: carne de soja">
                 </div>
+                <b-button @click="handleSearch">Procurar</b-button>
               </div>
             </div>
             <div class = "column is-one-fifth">
@@ -28,14 +29,24 @@
     </section>
         <!-- End of top part-->
 </template>
-
 <script>
+import ProductList from '@/components/Products/ProductList.js'
+
 export default {
   name: 'Header',
+  data () {
+    return {
+      productFilter: ''
+    }
+  },
   methods: {
     handleClick() {
       this.$emit('open')
     },
+    handleSearch () {
+      ProductList.setFilter({name: this.productFilter})
+      ProductList.filter()
+    }
   }
 }
 </script>

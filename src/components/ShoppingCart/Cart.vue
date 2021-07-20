@@ -18,24 +18,13 @@ export default {
   name: 'Cart',
   data() {
       return {
-        list: [],
-        intensCount: 0,
+        list: ShoppinList.getItems(),
       }
   },
   methods: {
     handleClick() {
       this.$emit('open')
-    },
-    handleItemAdd() {
-      this.list = ShoppinList.getItems()
-    },
-    handleItemRemove() {
-      console.log('itemRemove')
     }
-  },
-  created () {
-    ShoppinList.addWatcher('add', this.handleItemAdd)
-    ShoppinList.addWatcher('remove', this.handleItemRemove)
   }
 }
 </script>
