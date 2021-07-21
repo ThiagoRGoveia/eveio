@@ -5,7 +5,9 @@
         <div class = "container">
           <div class = "columns">
             <div class = "column is-one-fifth">
+              <router-link to="/" class="button is-primary">
                 <h1>E-Veio</h1>
+              </router-link>
             </div>
             <div class = "column is-three-fifths is-0-desktop-only">
               <b-field>
