@@ -8,12 +8,10 @@
                 <h1>E-Veio</h1>
             </div>
             <div class = "column is-three-fifths is-0-desktop-only">
-              <div class="field">
-                <div class="control">
-                  <b-input v-model="productFilter" type="search" placeholder="Exemplo: carne de soja">
-                </div>
+              <b-field>
+                  <b-input v-model="productFilter" type="search" placeholder="Exemplo: carne de soja" />
                 <b-button @click="handleSearch">Procurar</b-button>
-              </div>
+              </b-field>
             </div>
             <div class = "column is-one-fifth">
               <b-button
