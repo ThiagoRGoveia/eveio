@@ -34,7 +34,9 @@ class ProductList {
     } else if (this.#categoryFilter) {
       this.filterListByCategory(this.#categoryFilter)
     }
-    this.#events['list-change'].forEach(callback => callback(this.#filteredList))
+    if (this.#events['list-change']) {
+      this.#events['list-change'].forEach(watcher => watcher(this.#filteredList))
+    }
   }
 
   getList() {
