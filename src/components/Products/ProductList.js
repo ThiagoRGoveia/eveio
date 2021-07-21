@@ -10,6 +10,8 @@ class ProductList {
     this.#list = products
     this.#filteredList = this.#list
     this.#events = {}
+    this.#categoryFilter = 'carnes'
+    this.filter()
   }
 
   filterListByProductName(name) {
