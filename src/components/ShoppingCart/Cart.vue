@@ -1,11 +1,13 @@
 <template>
     <div>
       <section>
-        <div v-for="product in list" :key="product.id">
+        <div v-for="product in products" :key="product.id">
           <product :product="product" />
         </div>
       </section>
-
+      <router-link :to="{ name: 'checkout' }">
+        <b-button>Finalizar compra</b-button>
+      </router-link>
     </div>
 </template>
 
@@ -18,13 +20,19 @@ export default {
   name: 'Cart',
   data() {
       return {
-        list: ShoppinList.getItems(),
+        products: ShoppinList.getItems(),
       }
   },
   methods: {
     handleClick() {
       this.$emit('open')
+    },
+    handleItemsRemove(products) {
+      this.products = products
     }
+  },
+  created() {
+    ShoppinList.on('remove', this.handleItemsRemove)
   }
 }
 </script>

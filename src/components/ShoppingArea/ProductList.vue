@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     handleAdd (product) {
-      ShoppinList.addItem(product)
+      ShoppinList.add(product)
     },
     handleListChange(products) {
       this.products = products

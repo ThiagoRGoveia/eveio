@@ -17,7 +17,9 @@
           <div class="checkout-cart-container">
             <cart />
           </div>
-          <b-button native-type="submit" type="is-primary">Proceder para Pagamento</b-button>
+          <router-link :to="{ name: 'payment' }">
+            <b-button native-type="submit" type="is-primary">Proceder para Pagamento</b-button>
+          </router-link>
         </div>
       </div>
     </div>
