@@ -5,7 +5,9 @@
         @close="handleClose"
       />
       <Header @open="handleOpen"/>
-      <router-view name="content" :key="$route.fullPath" />
+      <div class="main-container">
+        <router-view name="content" :key="$route.fullPath" />
+      </div>
       <BottomPart/>
     </div>
 </template>
@@ -41,5 +43,8 @@ export default {
 <style>
 .eveio {
   position: relative;
+}
+.main-container {
+  min-height: 70vh;
 }
 </style>
