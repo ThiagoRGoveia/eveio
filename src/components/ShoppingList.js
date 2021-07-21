@@ -1,34 +1,39 @@
 class ShoppingList {
+  #events
   constructor() {
     this.items = [];
-    this.itemWatcher = {};
+    this.#events = {};
   }
 
-  addItem(item) {
+  add(item) {
     const itemIndex = this.items.findIndex(i => i.id === item.id)
     if (itemIndex === -1) {
       this.items.push(item);
     } else {
       this.items[itemIndex].ammount = item.ammount;
     }
-    this.itemWatcher['add'].forEach(watcher => watcher(item));
+    if (this.#events['add']) {
+      this.#events['add'].forEach(watcher => watcher(item));
+    }
   }
 
-  removeItem(item) {
+  remove(item) {
     this.items = this.items.filter(i => i.id !== item.id);
-    this.itemWatcher['remove'].forEach(watcher => watcher(item));
+    if (this.#events['remove']) {
+      this.#events['remove'].forEach(watcher => watcher(this.items));
+    }
   }
 
   getItems() {
     return this.items;
   }
 
-  addWatcher(type, watcher) {
+  on(type, watcher) {
     if (typeof watcher === 'function') {
-      if (!this.itemWatcher[type]) {
-        this.itemWatcher[type] = [watcher];
+      if (!this.#events[type]) {
+        this.#events[type] = [watcher];
       } else {
-        this.itemWatcher[type].push(watcher);
+        this.#events[type].push(watcher);
       }
     }
   }
