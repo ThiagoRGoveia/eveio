@@ -10,13 +10,13 @@
 
 <script>
 import Product from '@/components/ShoppingArea/Product.vue'
-import products from '@/components/Products/products.js'
+import ProductList from '@/components/Products/ProductList.js'
 import ShoppinList from '@/components/ShoppingList.js';
 export default {
   name: 'ProductList',
   data () {
     return {
-      products: products
+      products: ProductList.getList()
     }
   },
   components: {
@@ -25,7 +25,13 @@ export default {
   methods: {
     handleAdd (product) {
       ShoppinList.addItem(product)
+    },
+    handleListChange(products) {
+      this.products = products
     }
+  },
+  created () {
+    ProductList.on('list-change', this.handleListChange)
   }
 }
 </script>

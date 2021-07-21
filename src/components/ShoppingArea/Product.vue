@@ -2,9 +2,9 @@
 <div class="card">
   <div class="card-content">
       <div class="content">
-        <img :src="product.image" alt="img" />
+        <img :src="product.image" :alt="product.name" />
         <b-input type="number" v-model="ammount" />
-        <button @click="handleClick">ADD</button>
+        <button @click="handleClick">Adicionar</button>
       </div>
   </div>
 </div>

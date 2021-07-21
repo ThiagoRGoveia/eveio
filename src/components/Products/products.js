@@ -1,39 +1,177 @@
+import alcatra from "@/assets/items/Imagens_itens/carnes/alcatra.jpg"
+import bisteca_suina from "@/assets/items/Imagens_itens/carnes/bisteca_suina.jpg"
+import carne_moida from "@/assets/items/Imagens_itens/carnes/carne_moida.jpg"
+import contra_file from "@/assets/items/Imagens_itens/carnes/contra_file.jpg"
+import file_de_frango from "@/assets/items/Imagens_itens/carnes/file_de_frango.jpg"
+import file_mignon from "@/assets/items/Imagens_itens/carnes/file_mignon.jpg"
+import file_tilapia from "@/assets/items/Imagens_itens/carnes/file_tilapia.jpg"
+import linguica from "@/assets/items/Imagens_itens/carnes/linguica.jpg"
+import picanha from "@/assets/items/Imagens_itens/carnes/picanha.jpg"
+import bacardi_cartablanca from "@/assets/items/Imagens_itens/bebidas/bacardi_cartablanca.jpg"
+import BrahmaDuploMalte from "@/assets/items/Imagens_itens/bebidas/BrahmaDuploMalte.jpg"
+import cajuzinho from "@/assets/items/Imagens_itens/bebidas/cajuzinho.jpg"
+import heineken from "@/assets/items/Imagens_itens/bebidas/heineken.jpg"
+import jack_daniels from "@/assets/items/Imagens_itens/bebidas/jack_daniels.jpg"
+import jurupinga from "@/assets/items/Imagens_itens/bebidas/jurupinga.jpg"
+import red_label from "@/assets/items/Imagens_itens/bebidas/red_label.jpg"
+import saque from "@/assets/items/Imagens_itens/bebidas/saque.jpg"
+import smirnoff from "@/assets/items/Imagens_itens/bebidas/smirnoff.jpg"
+
 export default [
-    {
-      id: 1,
-      name: 'Picanha',
-      price: 50.50,
-      unit: 'kg',
-      description: 'Picanha, also known as bresaola, is a type of meat from the boar, the internal name of the meat comes from the Spanish word picanha, which means "ribs".',
-      image: 'data:image/jpeg;base64,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',
-      category: 'meats'
-    },
-    {
-      id: 2,
-      name: 'Picanha',
-      price: 50.50,
-      unit: 'kg',
-      description: 'Picanha, also known as bresaola, is a type of meat from the boar, the internal name of the meat comes from the Spanish word picanha, which means "ribs".',
-      image: 'data:image/jpeg;base64,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',
-      category: 'meats'
-    },
-    {
-      id: 3,
-      name: 'Picanha',
-      price: 50.50,
-      unit: 'kg',
-      description: 'Picanha, also known as bresaola, is a type of meat from the boar, the internal name of the meat comes from the Spanish word picanha, which means "ribs".',
-      image: 'data:image/jpeg;base64,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',
-      category: 'meats'
-    },
-    {
-      id: 4,
-      name: 'Picanha',
-      price: 50.50,
-      unit: 'kg',
-      description: 'Picanha, also known as bresaola, is a type of meat from the boar, the internal name of the meat comes from the Spanish word picanha, which means "ribs".',
-      image: 'data:image/jpeg;base64,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',
-      category: 'meats'
-    }
+  {
+    id: 1,
+    name: "Alcatra Kg",
+    price: 48.95,
+    unidade: "Kg",
+    image: alcatra,
+    category: "carnes",
+  },
+
+  {
+    id: 2,
+    name: "Bisteca Suína Kg",
+    price: 27.95,
+    unidade: "Kg",
+    image: bisteca_suina,
+    category: "carnes",
+  },
+
+  {
+    id: 3,
+    name: "Carne Moída 1Kg",
+    price: 18.79,
+    unidade: "un",
+    image: carne_moida,
+    category: "carnes",
+  },
+
+  {
+    id: 4,
+    name: "Contra Filé Kg",
+    price: 46.95,
+    unidade: "Kg",
+    image: contra_file,
+    category: "carnes",
+  },
+
+  {
+    id: 5,
+    name: "Filé de Frango 1Kg",
+    price: 22.59,
+    unidade: "un",
+    image: file_de_frango,
+    category: "carnes"
+  },
+
+  {
+    id: 6,
+    name: "File Mignon Kg",
+    price: 69.95,
+    unidade: "Kg",
+    image: file_mignon,
+    category: "carnes"
+  },
+
+  {
+    id: 7,
+    name: "Filé Tilápia 800g",
+    price: 39.90,
+    unidade: "g",
+    image: file_tilapia,
+    category: "carnes"
+  },
+
+  {
+    id: 8,
+    name: "Linguiça Toscana Kg",
+    price: 19.56,
+    unidade: "Kg",
+    image: linguica,
+    category: "carnes"
+  },
+  {
+    id: 9,
+    name: "Picanha Kg",
+    price: 79.95,
+    unidade: "Kg",
+    image: picanha,
+    category: "carnes"
+  },
+  {
+    id: 10,
+    name: "Rum Bacardi Carta Blanca 980ml",
+    price: 47.90,
+    unidade: "un",
+    image: bacardi_cartablanca,
+    category: "bebidas"
+  },
+  {
+    id: 11,
+    name: "Cerveja Brahma Duplo Malte lata 350ml",
+    price: 2.99,
+    unidade: "un",
+    image: BrahmaDuploMalte,
+    category: "bebidas"
+  },
+  {
+    id: 12,
+    name: "Cajuzinho USP Caaso",
+    price: 0.00,
+    unidade: "caixa d'água",
+    image: cajuzinho,
+    category: "bebidas"
+  },
+  {
+    id: 13,
+    name: "Cerveja Heineken Long Neck 330ml",
+    price: 5.19,
+    unidade: "un",
+    image: heineken,
+    category: "bebidas"
+  },
+  {
+    id: 14,
+    name: "Whiskey Jack Daniels 1L",
+    price: 119.90,
+    unidade: "un",
+    image:jack_daniels,
+    category: "bebidas"
+  },
+  {
+    id: 15,
+    name: "Vinho Brasileiro Jurupinga 975ml",
+    price: 29.90,
+    unidade: "un",
+    image: jurupinga,
+    category: "bebidas"
+  },
+  {
+    id: 16,
+    name: "Whiskey Red Label 1L",
+    price: 79.90,
+    unidade: "un",
+    image: red_label,
+    category: "bebidas"
+  },
+  {
+    id: 17,
+    name: "Saquê Azuma Kirin Soft 740ml",
+    price: 18.83,
+    unidade: "un",
+    image: saque,
+    category: "bebidas"
+  },
+  {
+    id: 18,
+    name: "Vodka Smirnoff 1L",
+    price: 32.90,
+    unidade: "un",
+    image: smirnoff,
+    category: "bebidas"
+  }
 ]
+
+
+
+
 

@@ -36,7 +36,6 @@
             <!-- TENTAR ABRIR COM TECLADO -->
             <b-datepicker
                 v-model="date"
-                :show-week-number="showWeekNumber"
                 locale="pt-BR"
                 icon="calendar-today"
                 trap-focus
