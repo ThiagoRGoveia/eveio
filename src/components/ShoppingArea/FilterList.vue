@@ -1,12 +1,18 @@
 <template>
   <span>
     <b-tag
-      v-for="key in filterListKeys"
-      :key="key"
+      v-if="filters.name"
       closable
-      @close="handleClose(key)"
+      @close="handleClose('name')"
     >
-      {{filterListKeys[key]}}
+      {{filters.name}}
+    </b-tag>
+    <b-tag
+      v-if="filters.category"
+      closable
+      @close="handleClose('category')"
+    >
+      {{filters.category}}
     </b-tag>
   </span>
 </template>
@@ -17,18 +23,20 @@ export default {
   name: 'FilterList',
   data () {
     return {
-      filters: ProductList.getFilters(),
+      filters: {},
     }
   },
   methods: {
     handleClose (key) {
-      ProductList.removeFilter(key, undefined)
+      ProductList.removeFilter(key)
+      ProductList.filter()
+    },
+    updateFilters(filters) {
+      this.filters = filters
     }
   },
-  computed: {
-    filterListKeys() {
-      return Object.keys(this.filters)
-    }
+  created() {
+    ProductList.on('filter-change', this.updateFilters)
   }
 }
 </script>

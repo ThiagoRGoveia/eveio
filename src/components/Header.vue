@@ -11,7 +11,12 @@
             </div>
             <div class = "column is-three-fifths is-0-desktop-only">
               <b-field>
-                  <b-input v-model="productFilter" type="search" placeholder="Exemplo: carne de soja" />
+                  <b-input
+                    v-model="productFilter"
+                    type="search"
+                    placeholder="Exemplo: picanha"
+                    @keyup.enter.native="handleSearch"
+                  />
                 <b-button @click="handleSearch">Procurar</b-button>
               </b-field>
             </div>
