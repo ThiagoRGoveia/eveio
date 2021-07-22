@@ -2,6 +2,7 @@
 <div class="card">
   <div class="card-content">
       <div class="content">
+        <h1>{{ product.name }}</h1>
         <img :src="product.image" :alt="product.name" />
         <b-input type="number" v-model="ammount" />
         <button @click="handleClick">Adicionar</button>
