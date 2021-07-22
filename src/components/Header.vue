@@ -1,6 +1,6 @@
 <template>
     <!-- Top part -->
-    <section class="hero has-background-dark">
+    <section class="hero">
       <div class="hero-body">
         <div class = "container">
           <div class = "columns">
@@ -9,9 +9,9 @@
                 <h1>E-Veio</h1>
               </router-link>
             </div>
-            <div class = "column is-three-fifths is-0-desktop-only">
+            <div class = "column is-three-fifths">
               <b-field>
-                  <b-input
+                  <b-input class="is-expanded"
                     v-model="productFilter"
                     type="search"
                     placeholder="Exemplo: picanha"
@@ -58,5 +58,8 @@ export default {
 
 
 <style>
-
+.hero-body {
+  padding: 30px;
+  background-color: #003d4e;
+}
 </style>

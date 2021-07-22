@@ -1,6 +1,6 @@
 <template>
      <!-- bottom part -->
-        <section class="section has-background-black">
+        <section class="section">
         <div class = "container">
         <div class = "columns is-multiline">
             <!-- First row of columns-->
@@ -59,5 +59,4 @@ export default{
 </script>
 
 <style>
-
 </style>

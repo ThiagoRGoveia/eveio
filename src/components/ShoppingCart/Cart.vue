@@ -5,7 +5,7 @@
           <product :product="product" />
         </div>
       </section>
-      <router-link :to="{ name: 'checkout' }">
+      <router-link :to="{ name: 'checkout'}" @click.native="handleClose">
         <b-button>Finalizar compra</b-button>
       </router-link>
     </div>
@@ -24,16 +24,16 @@ export default {
       }
   },
   methods: {
-    handleClick() {
-      this.$emit('open')
-    },
     handleItemsRemove(products) {
       this.products = products
+    },
+    handleClose () {
+      this.$emit('close')
     }
   },
   created() {
     ShoppinList.on('remove', this.handleItemsRemove)
-  }
+  },
 }
 </script>
 

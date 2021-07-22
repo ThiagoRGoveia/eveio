@@ -43,8 +43,12 @@ export default {
 <style>
 .eveio {
   position: relative;
+  padding: 5px;
+  background-color: #007191;
 }
 .main-container {
   min-height: 70vh;
+  padding-top: 50px;
+  background-color: rgb(197, 220, 240);
 }
 </style>

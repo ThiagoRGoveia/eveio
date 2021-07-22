@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <div class="columns is-multiline">
-    <div class="column is-one-third" v-for="product in products" :key="product.id">
+    <div class="column is-one-quarter" v-for="product in products" :key="product.id">
       <product @add="handleAdd" :product="product"  />
     </div>
   </div>

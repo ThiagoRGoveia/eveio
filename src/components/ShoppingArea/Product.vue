@@ -1,10 +1,14 @@
 <template>
 <div class="card">
   <div class="card-content">
-      <div class="content">
-        <h1>{{ product.name }}</h1>
-        <img :src="product.image" :alt="product.name" />
-        <b-input type="number" v-model="ammount" />
+      <div class="content img">
+        <h2>{{ product.name }} {{product.price}} R$</h2>
+        <img :src="product.image" :alt="product.name"/>
+        <b-input 
+          type="number" 
+          placeholder="Exemplo: 2"
+          v-model="ammount"
+        />
         <button @click="handleClick">Adicionar</button>
       </div>
   </div>
@@ -29,5 +33,8 @@ export default {
 </script>
 
 <style>
-
+.content img{
+  width: 80%;
+  height: 150px;
+}
 </style>

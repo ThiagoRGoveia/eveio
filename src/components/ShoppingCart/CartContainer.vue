@@ -1,7 +1,7 @@
 <template>
   <div :class="`drawer ${isActive ? 'active' : 'inactive'}`">
     <button @click="handleClick">Fechar</button>
-    <Cart />
+    <Cart @close="handleClick"/>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
     position: absolute;
     width: 30vw;
     height: 100%;
-    background-color: lightcoral;
+    background-color: #ebd09f;
     transition: all 0.5s ease-in-out;
     right: 0;
     top: 0;
