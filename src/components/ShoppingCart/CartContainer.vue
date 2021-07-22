@@ -3,6 +3,7 @@
     <button @click="handleClick">Fechar</button>
     <Cart @close="handleClick"/>
   </div>
+  
 </template>
 
 <script>

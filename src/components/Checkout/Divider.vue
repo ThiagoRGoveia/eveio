@@ -18,7 +18,7 @@ export default {
 .divider::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 50px;
   left: -50px;
   background-color: lightgray;
   height: 1px;

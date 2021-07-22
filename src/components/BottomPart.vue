@@ -1,7 +1,7 @@
 <template>
      <!-- bottom part -->
-        <section class="section">
-        <div class = "container">
+        <section class="sectionBottomPart">
+        <div class = "container bottomPart">
         <div class = "columns is-multiline">
             <!-- First row of columns-->
             <div class = "column is-one-fifth">
@@ -59,4 +59,10 @@ export default{
 </script>
 
 <style>
+.sectionBottomPart {
+    background-color: #204B5F;
+    color: #fff;
+    padding: 0px;
+    margin-top: 5px;
+}
 </style>

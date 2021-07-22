@@ -6,7 +6,6 @@
         </div>
       </section>
       <router-link :to="{ name: 'checkout'}" @click.native="handleClose">
-        <b-button>Finalizar compra</b-button>
       </router-link>
     </div>
 </template>

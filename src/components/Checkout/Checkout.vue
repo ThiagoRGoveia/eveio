@@ -14,6 +14,8 @@
           <finish-by-phone-number />
         </div>
         <div class="column">
+        </div>
+        <div class="column">
           <div class="checkout-cart-container">
             <cart />
           </div>
