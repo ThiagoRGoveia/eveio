@@ -7,7 +7,7 @@
         <span><br/>Preço total: {{ product.ammount * product.price}}<br/></span>
       </div>
       <div class="column">
-        <button @click="handleRemove">Remover</button>
+        <button class="button is-medium" @click="handleRemove">Remover</button>
       </div>
     </div>
   </span>

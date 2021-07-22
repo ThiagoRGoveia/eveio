@@ -6,6 +6,7 @@
         </div>
       </section>
       <router-link :to="{ name: 'checkout'}" @click.native="handleClose">
+        <button class="btn btn-primary">Checkout(Temporario)</button>
       </router-link>
     </div>
 </template>
