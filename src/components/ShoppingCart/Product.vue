@@ -1,10 +1,15 @@
 <template>
   <span>
-    <span>{{ product.name }}</span>
-    <span>{{ product.ammount }}</span>
-    <span>{{ product.unit }}</span>
-    <span>{{ product.ammount * product.price}}</span>
-    <button @click="handleRemove">Remover</button>
+    <div class="columns">
+      <div class="column">
+        <span> {{product.name}} {{product.price}}R$ </span>
+        <span><br/>Quantidade: {{product.ammount}}</span>
+        <span><br/>Preço total: {{ product.ammount * product.price}}<br/></span>
+      </div>
+      <div class="column">
+        <button @click="handleRemove">Remover</button>
+      </div>
+    </div>
   </span>
 </template>
 
