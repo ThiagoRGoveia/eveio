@@ -20,7 +20,7 @@ import smirnoff from "@/assets/items/Imagens_itens/bebidas/smirnoff.jpg"
 export default [
   {
     id: 1,
-    name: "Alcatra Kg",
+    name: "Alcatra",
     price: 48.95,
     unidade: "Kg",
     image: alcatra,
@@ -29,7 +29,7 @@ export default [
 
   {
     id: 2,
-    name: "Bisteca Suína Kg",
+    name: "Bisteca Suína",
     price: 27.95,
     unidade: "Kg",
     image: bisteca_suina,
@@ -38,7 +38,7 @@ export default [
 
   {
     id: 3,
-    name: "Carne Moída 1Kg",
+    name: "Carne Moída",
     price: 18.79,
     unidade: "un",
     image: carne_moida,
@@ -47,7 +47,7 @@ export default [
 
   {
     id: 4,
-    name: "Contra Filé Kg",
+    name: "Contra Filé",
     price: 46.95,
     unidade: "Kg",
     image: contra_file,
@@ -56,7 +56,7 @@ export default [
 
   {
     id: 5,
-    name: "Filé de Frango 1Kg",
+    name: "Filé de Frango",
     price: 22.59,
     unidade: "un",
     image: file_de_frango,
@@ -65,7 +65,7 @@ export default [
 
   {
     id: 6,
-    name: "File Mignon Kg",
+    name: "File Mignon",
     price: 69.95,
     unidade: "Kg",
     image: file_mignon,
@@ -74,7 +74,7 @@ export default [
 
   {
     id: 7,
-    name: "Filé Tilápia 800g",
+    name: "Filé Tilápia",
     price: 39.90,
     unidade: "g",
     image: file_tilapia,
@@ -83,7 +83,7 @@ export default [
 
   {
     id: 8,
-    name: "Linguiça Toscana Kg",
+    name: "Linguiça Toscana",
     price: 19.56,
     unidade: "Kg",
     image: linguica,
@@ -91,7 +91,7 @@ export default [
   },
   {
     id: 9,
-    name: "Picanha Kg",
+    name: "Picanha",
     price: 79.95,
     unidade: "Kg",
     image: picanha,
@@ -99,7 +99,7 @@ export default [
   },
   {
     id: 10,
-    name: "Rum Bacardi Carta Blanca 980ml",
+    name: "Rum Bacardi Carta Blanca",
     price: 47.90,
     unidade: "un",
     image: bacardi_cartablanca,
@@ -107,7 +107,7 @@ export default [
   },
   {
     id: 11,
-    name: "Cerveja Brahma Duplo Malte lata 350ml",
+    name: "Cerveja Brahma Duplo Malte lata",
     price: 2.99,
     unidade: "un",
     image: BrahmaDuploMalte,
@@ -123,7 +123,7 @@ export default [
   },
   {
     id: 13,
-    name: "Cerveja Heineken Long Neck 330ml",
+    name: "Cerveja Heineken Long Neck",
     price: 5.19,
     unidade: "un",
     image: heineken,
@@ -131,7 +131,7 @@ export default [
   },
   {
     id: 14,
-    name: "Whiskey Jack Daniels 1L",
+    name: "Whiskey Jack Daniels",
     price: 119.90,
     unidade: "un",
     image:jack_daniels,
@@ -139,7 +139,7 @@ export default [
   },
   {
     id: 15,
-    name: "Vinho Brasileiro Jurupinga 975ml",
+    name: "Vinho Brasileiro Jurupinga",
     price: 29.90,
     unidade: "un",
     image: jurupinga,
@@ -147,7 +147,7 @@ export default [
   },
   {
     id: 16,
-    name: "Whiskey Red Label 1L",
+    name: "Whiskey Red Label",
     price: 79.90,
     unidade: "un",
     image: red_label,
@@ -155,7 +155,7 @@ export default [
   },
   {
     id: 17,
-    name: "Saquê Azuma Kirin Soft 740ml",
+    name: "Saquê Azuma Kirin Soft",
     price: 18.83,
     unidade: "un",
     image: saque,
@@ -163,7 +163,7 @@ export default [
   },
   {
     id: 18,
-    name: "Vodka Smirnoff 1L",
+    name: "Vodka Smirnoff",
     price: 32.90,
     unidade: "un",
     image: smirnoff,
