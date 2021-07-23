@@ -2,14 +2,24 @@
 <div class="card">
   <div class="card-content">
       <div class="content img">
-        <h2>{{ product.name }} {{product.price}} R$</h2>
+        <h2>{{ product.name }}</h2>
         <img :src="product.image" :alt="product.name"/>
-        <b-input 
-          type="number" 
-          placeholder="Exemplo: 2"
-          v-model="ammount"
-        />
-        <button @click="handleClick">Adicionar</button>
+        <div class="columns">
+          <div class="column is-4">
+            <b-input 
+              type="number"
+              v-model="ammount"
+            />
+          </div>
+          <div class="column is-3 is-centered">
+            <b-button @click="handleClick" class=" button is-rounded is-primary" icon-right="plus"></b-button>
+          </div>
+          <div class="column is-1">
+          </div>
+          <div class="column is-3">
+            <p>{{ product.price }}R$<br/>     / {{product.unidade}}</p>
+          </div>
+        </div>
       </div>
   </div>
 </div>
