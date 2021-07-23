@@ -1,9 +1,18 @@
 <template>
   <div :class="`drawer ${isActive ? 'active' : 'inactive'}`">
-    <button @click="handleClick">Fechar</button>
+    <div
+      @click="handleClick"
+      role="button"
+      class="close-btn"
+    >
+      <b-icon
+        icon="close"
+        size="is-medium"
+      />
+    </div>
     <Cart @close="handleClick"/>
   </div>
-  
+
 </template>
 
 <script>
@@ -33,11 +42,25 @@ export default {
     right: 0;
     top: 0;
     z-index: 99;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .drawer {
+      width: 100%;
+    }
+
   }
   .drawer.active {
     transform: translateX(0);
   }
   .drawer.inactive {
     transform: translateX(10000px);
+  }
+
+  .close-btn {
+    margin: 10px;
+    cursor: pointer;
   }
 </style>
