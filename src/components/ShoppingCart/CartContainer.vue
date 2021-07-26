@@ -1,16 +1,22 @@
 <template>
-  <div :class="`drawer ${isActive ? 'active' : 'inactive'}`">
+  <div
+    :class="`drawer ${isActive ? 'active' : 'inactive'}`"
+    ref="cart"
+    :tabindex="isActive ? 2 : -1"
+  >
     <div
-      @click="handleClick"
+      @click="handleClose"
       role="button"
       class="close-btn"
+      :tabindex="isActive ? 2 : -1"
+      @keyup.enter="handleClose"
     >
       <b-icon
         icon="close"
         size="is-medium"
       />
     </div>
-    <Cart @close="handleClick"/>
+    <Cart :isActive="isActive" @close="handleClose"/>
   </div>
 
 </template>
@@ -25,8 +31,15 @@ export default {
     Cart
   },
   methods: {
-    handleClick () {
+    handleClose () {
       this.$emit('close')
+    }
+  },
+  watch: {
+    isActive (value) {
+      if (value) {
+        this.$refs.cart.focus()
+      }
     }
   }
 }
@@ -38,7 +51,7 @@ export default {
     width: 30vw;
     height: 100%;
     background-color: #ebd09f;
-    transition: all 0.5s ease-in-out;
+    /* transition: all 0.5s ease-in-out; */
     right: 0;
     top: 0;
     z-index: 99;

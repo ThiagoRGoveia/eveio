@@ -5,8 +5,12 @@
       <p>
         <span class="dot">&#8228;</span>Quantidade: {{product.ammount}} - R${{ product.ammount * product.price}}
       </p>
-      <b-button @click="handleRemove" type="is-danger"
-        icon-right="delete">
+      <b-button
+        @click="handleRemove"
+        type="is-danger"
+        :tabindex="isActive ? 2 : -1"
+        icon-right="delete"
+      >
       </b-button>
     </span>
   </span>
@@ -17,7 +21,7 @@ import ShoppingList from '@/components/ShoppingList.js'
 
 export default {
   name: 'Product',
-  props: ['product'],
+  props: ['product', 'isActive'],
   methods: {
     handleRemove () {
       ShoppingList.remove(this.product)

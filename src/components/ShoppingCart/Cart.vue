@@ -2,8 +2,8 @@
     <section class="cart">
       <h1 class="is-size-2 has-text-centered">Carrinho</h1>
       <ul>
-        <li v-for="product in products" :key="product.id">
-          <product :product="product" />
+        <li aria-role="cart" role="menuitem" v-for="product in products" :key="product.id">
+          <product :product="product" :isActive="isActive" />
         </li>
       </ul>
       <div class="checkout-btn">
@@ -21,6 +21,7 @@ import Product from '@/components/ShoppingCart/Product.vue';
 export default {
   components: { Product },
   name: 'Cart',
+  props: ['isActive'],
   data() {
       return {
         products: ShoppinList.getItems(),
