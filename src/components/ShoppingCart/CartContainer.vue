@@ -1,9 +1,24 @@
 <template>
-  <div :class="`drawer ${isActive ? 'active' : 'inactive'}`">
-    <button @click="handleClick">Fechar</button>
-    <Cart @close="handleClick"/>
+  <div
+    :class="`drawer ${isActive ? 'active' : 'inactive'}`"
+    ref="cart"
+    :tabindex="isActive ? 2 : -1"
+  >
+    <div
+      @click="handleClose"
+      role="button"
+      class="close-btn"
+      :tabindex="isActive ? 2 : -1"
+      @keyup.enter="handleClose"
+    >
+      <b-icon
+        icon="close"
+        size="is-medium"
+      />
+    </div>
+    <Cart :isActive="isActive" @close="handleClose"/>
   </div>
-  
+
 </template>
 
 <script>
@@ -16,8 +31,15 @@ export default {
     Cart
   },
   methods: {
-    handleClick () {
+    handleClose () {
       this.$emit('close')
+    }
+  },
+  watch: {
+    isActive (value) {
+      if (value) {
+        this.$refs.cart.focus()
+      }
     }
   }
 }
@@ -29,15 +51,29 @@ export default {
     width: 30vw;
     height: 100%;
     background-color: #ebd09f;
-    transition: all 0.5s ease-in-out;
+    /* transition: all 0.5s ease-in-out; */
     right: 0;
     top: 0;
     z-index: 99;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .drawer {
+      width: 100%;
+    }
+
   }
   .drawer.active {
     transform: translateX(0);
   }
   .drawer.inactive {
     transform: translateX(10000px);
+  }
+
+  .close-btn {
+    margin: 10px;
+    cursor: pointer;
   }
 </style>

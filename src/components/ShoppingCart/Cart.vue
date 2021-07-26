@@ -1,14 +1,17 @@
 <template>
-    <div>
-      <section>
-        <div v-for="product in products" :key="product.id">
-          <product :product="product" />
-        </div>
-      </section>
-      <router-link :to="{ name: 'checkout'}" @click.native="handleClose">
-        <button class="btn btn-primary">Checkout(Temporario)</button>
-      </router-link>
-    </div>
+    <section class="cart">
+      <h1 class="is-size-2 has-text-centered">Carrinho</h1>
+      <ul>
+        <li aria-role="cart" role="menuitem" v-for="product in products" :key="product.id">
+          <product :product="product" :isActive="isActive" />
+        </li>
+      </ul>
+      <div class="checkout-btn">
+        <router-link :to="{ name: 'checkout'}" @click.native="handleClose">
+          <b-button expanded type="is-primary">Checkout</b-button>
+        </router-link>
+      </div>
+    </section>
 </template>
 
 <script>
@@ -18,6 +21,7 @@ import Product from '@/components/ShoppingCart/Product.vue';
 export default {
   components: { Product },
   name: 'Cart',
+  props: ['isActive'],
   data() {
       return {
         products: ShoppinList.getItems(),
@@ -37,13 +41,24 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style >
+ .cart {
+   margin: 15px 25px;
+ }
+
+ .cart h1 {
+   border-bottom: 1px red solid;
+   margin-bottom: 20px;
+ }
+
+ .cart li {
+   padding-bottom: 20px;
+   margin-bottom: 10px;
+   border-bottom: 1px black solid ;
+ }
+
+  .checkout-btn button {
+    height: 45px;
+  }
+
 </style>

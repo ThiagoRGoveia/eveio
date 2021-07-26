@@ -40,11 +40,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import 'assets/scss/main.scss';
+
 .eveio {
   position: relative;
-  padding: 5px;
-  background-color: #007191;
 }
 .main-container {
   min-height: 70vh;

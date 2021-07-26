@@ -25,14 +25,13 @@
                 class = "is-pulled-right"
                 @click="handleClick"
               >
-                  Carrinho
+                Carrinho
               </b-button>
             </div>
           </div>
         </div>
       </div>
     </section>
-        <!-- End of top part-->
 </template>
 <script>
 import ProductList from '@/components/Products/ProductList.js'
@@ -55,7 +54,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 .hero-body {

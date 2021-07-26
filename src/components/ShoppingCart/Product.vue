@@ -1,15 +1,18 @@
 <template>
-  <span>
-    <div class="columns">
-      <div class="column">
-        <span> {{product.name}} {{product.price}}R$ </span>
-        <span><br/>Quantidade: {{product.ammount}}</span>
-        <span><br/>Preço total: {{ product.ammount * product.price}}<br/></span>
-      </div>
-      <div class="column">
-        <button class="button is-medium" @click="handleRemove">Remover</button>
-      </div>
-    </div>
+  <span class="cart-product">
+    <p class="label"> {{product.name}} </p>
+    <span class="cart-product-description">
+      <p>
+        <span class="dot">&#8228;</span>Quantidade: {{product.ammount}} - R${{ product.ammount * product.price}}
+      </p>
+      <b-button
+        @click="handleRemove"
+        type="is-danger"
+        :tabindex="isActive ? 2 : -1"
+        icon-right="delete"
+      >
+      </b-button>
+    </span>
   </span>
 </template>
 
@@ -18,7 +21,7 @@ import ShoppingList from '@/components/ShoppingList.js'
 
 export default {
   name: 'Product',
-  props: ['product'],
+  props: ['product', 'isActive'],
   methods: {
     handleRemove () {
       ShoppingList.remove(this.product)
@@ -28,5 +31,28 @@ export default {
 </script>
 
 <style>
+.dot {
+  font-size: 50px;
+}
 
+.cart-product .label {
+  margin-bottom: 0 !important;
+}
+
+.cart-product {
+  margin-bottom: 1.5rem !important;
+}
+
+.cart-product-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+  line-height: 20px;
+}
+
+.cart-product-description p {
+  line-height: inherit;
+}
 </style>
