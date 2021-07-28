@@ -1,7 +1,7 @@
 <template>
 <div class="container">
-  <div class="columns is-multiline">
-    <div class="column is-one-quarter" v-for="product in products" :key="product.id">
+  <div class="is-flex is-flex-wrap-wrap i">
+    <div class="card-content column" v-for="product in products" :key="product.id">
       <product @add="handleAdd" :product="product"  />
     </div>
   </div>
@@ -37,5 +37,8 @@ export default {
 </script>
 
 <style>
+.card-content {
+  margin: 20px;
+}
 
 </style>

@@ -45,6 +45,7 @@ export default {
 
 .eveio {
   position: relative;
+  overflow: hidden;
 }
 .main-container {
   min-height: 70vh;
