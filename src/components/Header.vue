@@ -1,12 +1,11 @@
 <template>
-    <!-- Top part -->
     <section class="hero">
       <div class="hero-body">
         <div class = "container">
-          <div class = "columns">
-            <div class = "column is-one-fifth">
-              <router-link to="/" class="button is-primary">
-                <h1>E-Veio</h1>
+          <div class = "columns is-vcentered">
+            <div class = "column is-one-fifth home-btn">
+              <router-link to="/">
+                <img src="@/assets/logo.png" alt="home">
               </router-link>
             </div>
             <div class = "column is-three-fifths">
@@ -17,15 +16,19 @@
                     placeholder="Exemplo: picanha"
                     @keyup.enter.native="handleSearch"
                   />
-                <b-button @click="handleSearch">Procurar</b-button>
+                <b-button @click="handleSearch">
+                  <b-icon icon="magnify" size="mdi-18px"/>
+                </b-button>
               </b-field>
             </div>
             <div class = "column is-one-fifth">
               <b-button
-                class = "is-pulled-right"
+                type="is-primary"
+                class = "is-pulled-right cart-btn"
                 @click="handleClick"
+                rounded
               >
-                Carrinho
+                <b-icon icon="cart"/>
               </b-button>
             </div>
           </div>
@@ -59,5 +62,28 @@ export default {
 .hero-body {
   padding: 30px;
   background-color: #003d4e;
+}
+
+.home-btn {
+  height: 60px;
+  padding: 0 !important;
+}
+
+.home-btn img{
+  height: 100%;
+}
+
+.cart-btn{
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.cart-btn span.icon{
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.cart-btn .mdi-24px.mdi:before{
+  font-size: 40px !important;
 }
 </style>

@@ -10,6 +10,7 @@
         <b-input
           type="number"
           v-model="ammount"
+          min="0"
         />
       </div>
       <div class="">
@@ -24,6 +25,7 @@
 </template>
 
 <script>
+import { ToastProgrammatic as Toast } from 'buefy'
 export default {
   name: 'Product',
   props:  ['product'],
@@ -34,7 +36,15 @@ export default {
   },
   methods: {
     handleClick () {
-      this.$emit('add', {...this.product, ammount: parseFloat(this.ammount)})
+      if (this.ammount) {
+        this.$emit('add', {...this.product, ammount: parseFloat(this.ammount)})
+        Toast.open({
+            duration: 3000,
+            message: "Item adicionado ao carrinho",
+            position: 'is-top-right',
+            type: 'is-success'
+          })
+      }
     }
   }
 }

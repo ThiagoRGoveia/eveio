@@ -4,14 +4,20 @@
         <div class = "container bottomPart">
         <div class = "columns is-multiline">
             <!-- First row of columns-->
-            <div class = "column is-one-fifth">
-                <h1>e-Véio</h1>
+            <div class = "column is-one-fifth is-flex is-justify-content-center is-align-items-center">
+                <router-link to="/">
+                  <img class="logos-app" src="@/assets/logo.svg" alt="home">
+                </router-link>
                 <br>
             </div>
             <div class = "column is-one-fifth is-0-desktop-only">
-                <h1>Links Úteis</h1>
+                <a href="">Links Úteis</a>
                 <br>
-                <h2>    HOME</h2>
+                <a href="">HOME</a>
+                <br>
+                <a href=""> Fale Conosco</a>
+                <br>
+                <a href="">FAQ</a>
             </div>
             <div class = "column is-one-fifth">
             </div>
@@ -19,7 +25,8 @@
             </div>
             <div class = "column is-one-fifth">
                 <div class = "is-text">
-                    <h1>Disponivel Na Playstore</h1>
+                    <img class="logos-app" src="@/assets/playstore.svg" alt="playstore">
+                    <p>Disponivel Na Playstore</p>
                 </div>
             </div>
             <!--End of first row of columns-->
@@ -30,9 +37,7 @@
                 <h1>Email: contato@eveio.com.br</h1>
             </div>
             <div class = "column is-one-fifth is-0-desktop-only">
-                <h1>  Fale Conosco</h1>
-                <br>
-                <h2>    FAQ</h2>
+
             </div>
             <div class = "column is-one-fifth">
             </div>
@@ -40,7 +45,10 @@
             </div>
             <div class = "column is-one-fifth">
                 <div class = "is-text">
-                    <h1>Disponivel Na Appstore</h1>
+                    <a href="">
+                      <img class="logos-app" src="@/assets/ios.svg" alt="appstore">
+                      <h1>Disponivel Na Appstore</h1>
+                    </a>
                 </div>
             </div>
             <!--End of second row of columns-->
@@ -64,5 +72,19 @@ export default{
     color: #fff;
     padding: 0px;
     margin-top: 5px;
+}
+.sectionBottomPart a {
+  color: white;
+}
+
+.logos-app {
+  height: 180px;
+}
+
+/* meida for mobile */
+@media screen and (max-width: 768px) {
+  .logos-app {
+    height: 80px;
+  }
 }
 </style>
