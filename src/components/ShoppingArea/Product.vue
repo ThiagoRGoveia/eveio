@@ -1,6 +1,6 @@
 <template>
 <div class="card product-card">
-  <div class="content content-product">
+  <div class="content content-product columns">
     <h2>{{ product.name }}</h2>
     <figure class="">
     <img :src="product.image" :alt="product.name"/>
@@ -80,7 +80,7 @@ export default {
 }
 
 .price > div {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 
 .price input {
