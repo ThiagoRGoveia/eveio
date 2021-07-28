@@ -3,7 +3,6 @@
     <div class="columns">
     <div class="column is-1">
     </div>
-
     <nav class="breadcrumb" aria-label="breadcrumbs">
       <ul>
         <li><a href="#">Tela inicial</a></li>
@@ -29,7 +28,7 @@
         </div>
         <div class="column">
           <div class="checkout-cart-container">
-            <cart />
+            <product-list />
           </div>
           <router-link :to="{ name: 'payment' }">
             <b-button native-type="submit" type="is-primary">Proceder para Pagamento</b-button>
@@ -41,11 +40,11 @@
 </template>
 
 <script>
-import Cart from '@/components/ShoppingCart/Cart.vue'
 import CheckoutForm from '@/components/Checkout/CheckoutForm.vue'
 import Divider from '@/components/Checkout/Divider.vue'
 import FinishByPhoneNumber from '@/components/Checkout/FinishByPhoneNumber.vue'
 import CheckoutInformation from '@/components/Checkout/CheckoutInformation.js'
+import ProductList from '@/components/ShoppingCart/ProductList'
 export default {
   name: 'Checkout',
   data () {
@@ -58,10 +57,10 @@ export default {
     }
   },
   components: {
-    Cart,
     CheckoutForm,
     Divider,
-    FinishByPhoneNumber
+    FinishByPhoneNumber,
+    ProductList
   },
   methods: {
     handleSubmition () {
@@ -88,5 +87,7 @@ export default {
 </script>
 
 <style>
-
+ .checkout-cart-container{
+   margin-bottom: 50px;
+ }
 </style>

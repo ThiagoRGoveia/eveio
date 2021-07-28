@@ -3,7 +3,7 @@
     <p class="label"> {{product.name}} </p>
     <span class="cart-product-description">
       <p>
-        <span class="dot">&#8228;</span>Quantidade: {{product.ammount}} - R${{ product.ammount * product.price}}
+        <span class="dot">&#8228;</span>Quantidade: {{product.ammount}} - R${{ getPrice(product)}}
       </p>
       <b-button
         @click="handleRemove"
@@ -25,6 +25,9 @@ export default {
   methods: {
     handleRemove () {
       ShoppingList.remove(this.product)
+    },
+    getPrice(product) {
+      return (product.ammount * product.price).toFixed(2)
     }
   }
 }
