@@ -5,12 +5,12 @@
           v-model="values"
           :data="items"
           arrow
-          :items-to-show="4"
+          :items-to-show="numberOfItems"
           repeat
           has-drag
         >
           <template #item="category">
-            <div class="card">
+            <div class="card category-item">
               <div class="card-image">
                 <figure class="image is-5by4">
                   <a
@@ -42,6 +42,7 @@ export default {
   props: ['gray'],
   data() {
     return {
+        windowWidth: window.innerWidth,
         values: undefined,
         items: [
             {
@@ -76,7 +77,30 @@ export default {
     handleClick({category}) {
       ProductList.setFilter({category})
       ProductList.filter()
+    },
+    handleResize () {
+      this.windowWidth = window.innerWidth
+      console.log(this.windowWidth)
     }
+  },
+  computed: {
+    numberOfItems() {
+      if (this.windowWidth > 1200) {
+        return 4
+      } else if (this.windowWidth > 992) {
+        return 3
+      } else if (this.windowWidth > 433) {
+        return 2
+      } else {
+        return 1
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
   }
 }
 </script>
