@@ -80,7 +80,6 @@ export default {
     },
     handleResize () {
       this.windowWidth = window.innerWidth
-      console.log(this.windowWidth)
     }
   },
   computed: {
