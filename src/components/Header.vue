@@ -23,7 +23,6 @@
             </div>
             <div class = "column is-one-fifth">
               <b-button
-                type="is-primary"
                 class = "is-pulled-right cart-btn"
                 @click="handleClick"
                 rounded
@@ -76,6 +75,9 @@ export default {
 .cart-btn{
   width: 80px !important;
   height: 80px !important;
+  background:#7ECF3F !important;
+  color: black !important;
+  border: none !important;
 }
 
 .cart-btn span.icon{
