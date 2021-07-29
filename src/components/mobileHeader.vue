@@ -1,8 +1,7 @@
 <template>
     <section class="hero">
     <div class="hero-body">
-    <div class = "container">
-        <div class="columns logo-and-cart">
+    <div class = "container logo-and-cart">
             <router-link to="/" class="coisa-pra-alterar">
             <img src="@/assets/logo.png" alt="home">
             </router-link>
@@ -14,8 +13,6 @@
             >
             <b-icon icon="cart"/>
             </b-button> 
-        </div>
-
     </div>
     <div class="container search-bar">
         <b-field>
@@ -62,37 +59,38 @@ export default {
 }
 
 .home-btn {
-  height: 5rem !important;
-  padding: 0 !important;
+    margin-bottom: 1rem !important;
+    height: 5rem !important;
+    padding: 0 !important;
 }
 
 .home-btn img{
-  height: 100%;
+    height: 100% !important;
 }
 
 .cart-btn{
-  width: 4rem !important;
-  height: 4rem !important;
+    width: 4rem !important;
+    height: 4rem !important;
 }
 
 .cart-btn span.icon{
-  width: 4rem !important;
-  height: 4rem !important;
+    width: 4rem !important;
+    height: 4rem !important;
 }
 
 .cart-btn .mdi-24px.mdi:before{
-  font-size: 2.5rem !important;
+    font-size: 2.5rem !important;
 }
 .logo-and-cart{
-    margin-top: 1rem;
-    margin-bottom: 10rem;
+    margin-top: 0rem !important;
+    margin-bottom: 1rem !important;
 }
 .search-bar{
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
+    margin-top: 2rem !important;
+    margin-bottom: 0.5rem !important;
 }
 .coisa-pra-alterar{
-    width: 5rem !important;
-    height: 5rem !important;
+    width: 4rem !important;
+    height: 4rem !important;
 }
 </style>
