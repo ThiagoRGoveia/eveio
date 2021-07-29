@@ -39,7 +39,6 @@ import ProductList from '@/components/Products/ProductList.js'
 
 export default {
   name: 'Carousel',
-  props: ['gray'],
   data() {
     return {
         windowWidth: window.innerWidth,

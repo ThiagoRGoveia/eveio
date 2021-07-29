@@ -5,14 +5,14 @@
         :isActive="isCartActive"
         @close="handleClose"
       />
-      <Header @open="handleOpen"/>
+      <component :is="isMobile ? 'MobileHeader' : 'Header'" @open="handleOpen"/>
       <div class="main-container">
         <div class="container">
           <Bradcrumbs />
           <router-view name="content" :key="$route.fullPath" />
         </div>
       </div>
-      <BottomPart/>
+      <component :is="isMobile ? 'MobileBottomPart' : 'BottomPart'" @open="handleOpen"/>
     </div>
 </template>
 
@@ -21,11 +21,14 @@ import BottomPart from '@/components/BottomPart.vue'
 import Header from '@/components/Header.vue'
 import CartContainer from '@/components/ShoppingCart/CartContainer.vue'
 import Bradcrumbs from '@/components/Bradcrumbs.vue'
+import MobileBottomPart from '@/components/mobileBottomPart.vue'
+import MobileHeader from '@/components/mobileHeader.vue'
 
 export default {
   name: 'App',
   data() {
       return {
+        windowWidth: window.innerWidth,
         isCartActive: false
       }
   },
@@ -35,13 +38,33 @@ export default {
     },
     handleOpen () {
       this.isCartActive = true
+    },
+    handleResize () {
+      this.windowWidth = window.innerWidth
     }
   },
   components: {
     Header,
     BottomPart,
     CartContainer,
-    Bradcrumbs
+    Bradcrumbs,
+    MobileBottomPart,
+    MobileHeader
+  },
+  computed: {
+    isMobile() {
+      if (this.windowWidth <= 760) {
+        return true
+      } else {
+        return false
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
   }
 }
 </script>
