@@ -60,9 +60,11 @@ export default {
 </script>
 
 <style>
+
 .card-content {
   margin: 0px;
-  min-width: 20rem;
+  min-width: 17.75rem;
+  max-width: 30rem;
 }
 .i {
   text-align: center;
