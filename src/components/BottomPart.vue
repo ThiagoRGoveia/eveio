@@ -10,23 +10,23 @@
                 </router-link>
                 <br>
             </div>
-            <div class = "column is-one-fifth is-0-desktop-only">
-                <a href="">Links Úteis</a>
-                <br>
-                <a href="">HOME</a>
-                <br>
-                <a href=""> Fale Conosco</a>
-                <br>
-                <a href="">FAQ</a>
-            </div>
             <div class = "column is-one-fifth">
+            </div>
+            <div class = "column is-one-fifth colunaEscolhida">
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="" class="links-uteis">Links Úteis</a>
+                <br>
+                <br>
+                <a href="" class="home">HOME</a>
             </div>
             <div class = "column is-one-fifth">
             </div>
             <div class = "column is-one-fifth">
                 <div class = "is-text">
                     <img class="logos-app" src="@/assets/playstore.svg" alt="playstore">
-                    <p>Disponivel Na Playstore</p>
                 </div>
             </div>
             <!--End of first row of columns-->
@@ -39,7 +39,11 @@
             <div class = "column is-one-fifth is-0-desktop-only">
 
             </div>
-            <div class = "column is-one-fifth">
+            <div class = "column is-one-fifth colunaEscolhida">
+                <a href="" class="fale-conosco"> Fale Conosco</a>
+                <br>
+                <br>
+                <a href="" class="faq">FAQ</a>
             </div>
             <div class = "column is-one-fifth">
             </div>
@@ -47,7 +51,6 @@
                 <div class = "is-text">
                     <a href="">
                       <img class="logos-app" src="@/assets/ios.svg" alt="appstore">
-                      <h1>Disponivel Na Appstore</h1>
                     </a>
                 </div>
             </div>
@@ -76,11 +79,41 @@ export default{
 .sectionBottomPart a {
   color: white;
 }
-
+.colunaEscolhida {
+  text-align: center;
+}
 .logos-app {
   height: 180px;
 }
-
+.links-uteis {
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.home {
+  color: white;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.fale-conosco {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.faq { 
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+}
 /* meida for mobile */
 @media screen and (max-width: 768px) {
   .logos-app {

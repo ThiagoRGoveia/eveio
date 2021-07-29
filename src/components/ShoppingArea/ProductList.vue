@@ -39,6 +39,11 @@ export default {
 <style>
 .card-content {
   margin: 0px;
+  min-width: 20rem;
 }
-
+.i {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

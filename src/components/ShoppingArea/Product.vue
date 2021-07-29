@@ -7,13 +7,13 @@
     </figure>
     <div class="price">
       <div class="">
-        <b-input
+        <b-input class="input-quantidade"
           type="number"
           v-model="ammount"
           min="0"
         />
       </div>
-      <div class="">
+      <div class="buttonPlus">
         <b-button @click="handleClick" class=" button is-rounded is-primary" icon-right="plus"></b-button>
       </div>
       <div class="">
@@ -73,7 +73,16 @@ export default {
   align-items: center;
 }
 
+.buttonPlus {
+  text-align: center;
+}
+
+.input-quantidade {
+  text-align: center;
+}
+
 .price {
+  text-align: center;
   display: flex;
   justify-content: flex-start;
   width: 100%;
