@@ -4,18 +4,18 @@
     ref="cart"
     :tabindex="isActive ? 2 : -1"
   >
-    <div
+    <button
       @click="handleClose"
-      role="button"
       class="close-btn"
       :tabindex="isActive ? 2 : -1"
       @keyup.enter="handleClose"
+      ref="closeBtn"
     >
       <b-icon
         icon="close"
         size="is-medium"
       />
-    </div>
+    </button>
     <Cart :isActive="isActive" @close="handleClose"/>
   </div>
 
@@ -35,12 +35,8 @@ export default {
       this.$emit('close')
     }
   },
-  watch: {
-    isActive (value) {
-      if (value) {
-        this.$refs.cart.focus()
-      }
-    }
+  mounted () {
+    this.$refs.cart.focus()
   }
 }
 </script>
@@ -75,5 +71,8 @@ export default {
   .close-btn {
     margin: 10px;
     cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
   }
 </style>

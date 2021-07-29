@@ -1,6 +1,7 @@
 <template>
     <div class="eveio">
       <CartContainer
+        v-if="isCartActive"
         :isActive="isCartActive"
         @close="handleClose"
       />
@@ -54,7 +55,7 @@ export default {
 }
 .main-container {
   min-height: 70vh;
-  padding-top: 50px;
+  padding: 50px 0;
   background-color: rgb(197, 220, 240);
 }
 </style>
