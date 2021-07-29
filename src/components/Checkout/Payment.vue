@@ -8,36 +8,49 @@
               <b-input
                 v-model="clientData.name"
                 type="text"
+                placeholder="Seu nome"
               />
             </b-field>
             <b-field label="Sobrenome">
               <b-input
                 v-model="clientData.surname"
                 type="text"
+                placeholder="Seu sobrenome"
               />
             </b-field>
           </b-field>
-          <b-field grouped group-multiline>
+          <b-field
+           grouped
+           group-multiline
+           v-if="clientData.paymentMethod == 'card'"
+          >
             <b-field label="Número do cartão">
               <b-input
                 v-model="clientData.cardNumber"
                 type="text"
+                placeholder="Número do cartão"
               />
             </b-field>
-            <b-field label="CVV">
+            <b-field label="Código de segurança">
               <b-input
                 v-model="clientData.securityNumber"
+                placeholder="CVV"
                 type="text"
               />
             </b-field>
           </b-field>
-          <b-field label="Data de vencimento" class="date-input">
+          <b-field
+            label="Data de vencimento"
+            class="date-input"
+            v-if="clientData.paymentMethod == 'card'"
+          >
             <b-datepicker
                 v-model="clientData.date"
                 locale="pt-BR"
                 icon="calendar-today"
                 trap-focus
                 open-on-focus
+                placeholder="Data de vencimento"
               >
             </b-datepicker>
           </b-field>
@@ -70,7 +83,8 @@ export default {
         surname: '',
         cardNumber: '',
         securityNumber: '',
-        date: null
+        date: null,
+        paymentMethod: undefined
       }
     }
   },
@@ -85,6 +99,7 @@ export default {
       this.clientData.cardNumber = data.cardNumber
       this.clientData.securityNumber = data.securityNumber
       this.clientData.date = data.date
+      this.clientData.paymentMethod = data.paymentMethod
     }
   },
   watch: {

@@ -48,7 +48,7 @@ export default {
   data () {
     return {
       clientData: {
-        paymentMethod: '',
+        paymentMethod: undefined,
         address: '',
         city: '',
         state: '',

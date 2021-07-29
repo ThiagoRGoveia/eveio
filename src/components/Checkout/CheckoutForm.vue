@@ -17,7 +17,7 @@
       class="adress-input"
     >
       <b-input
-        value="address"
+        :value="address"
         @input="(value) => this.$emit('update:address', value)"
         placeholder="Nome da rua ou avenida"
         type="text"
@@ -28,7 +28,7 @@
         label="Cidade"
       >
         <b-input
-          value="city"
+          :value="city"
           @input="(value) => this.$emit('update:city', value)"
           placeholder="Nome da cidade"
         />
@@ -37,7 +37,7 @@
         label="UF"
       >
         <b-input
-          value="state"
+          :value="state"
           @input="(value) => this.$emit('update:state', value)"
           placeholder="Nome do estado"
         />
@@ -48,7 +48,7 @@
       class="cep-input"
     >
       <b-input
-        value="zipCode"
+        :value="zipCode"
         @input="(value) => this.$emit('update:zipCode', value)"
         placeholder="CEP"
       />
