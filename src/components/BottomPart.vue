@@ -26,7 +26,9 @@
             </div>
             <div class = "column is-one-fifth">
                 <div class = "is-text">
-                    <img class="logos-app" src="@/assets/playstore.svg" alt="playstore">
+                    <a href="">
+                      <img class="logos-app" src="@/assets/playstore.svg" alt="Link para Playstore">
+                    </a>
                 </div>
             </div>
             <!--End of first row of columns-->
@@ -50,7 +52,7 @@
             <div class = "column is-one-fifth">
                 <div class = "is-text">
                     <a href="">
-                      <img class="logos-app" src="@/assets/ios.svg" alt="appstore">
+                      <img class="logos-app" src="@/assets/ios.svg" alt="Link para Appstore">
                     </a>
                 </div>
             </div>
@@ -107,7 +109,7 @@ export default{
   text-decoration: none;
   margin-top: 10px;
 }
-.faq { 
+.faq {
   color: white;
   font-size: 1.6rem;
   font-weight: bold;
