@@ -2,7 +2,7 @@
 <div class="container">
   <div class="is-flex is-flex-wrap-wrap i">
     <div class="card-content column" v-for="product in products" :key="product.id">
-      <product @add="handleAdd" :product="product"  />
+      <product @add="handleAdd" :product="product"/>
     </div>
   </div>
 </div>
@@ -37,9 +37,11 @@ export default {
 </script>
 
 <style>
+
 .card-content {
   margin: 0px;
-  min-width: 20rem;
+  min-width: 17.75rem;
+  max-width: 30rem;
 }
 .i {
   text-align: center;
