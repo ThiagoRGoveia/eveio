@@ -116,8 +116,8 @@ export default [
   {
     id: 12,
     name: "Cajuzinho USP Caaso",
-    price: 0.00,
-    unidade: "caixa d'água",
+    price: 1.10,
+    unidade: "un",
     image: cajuzinho,
     category: "bebidas"
   },

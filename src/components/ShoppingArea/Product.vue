@@ -1,11 +1,11 @@
 <template>
 <div class="card product-card">
-  <div class="content content-product columns">
+  <div class="content content-product">
     <h2>{{ product.name }}</h2>
     <figure class="">
-    <img :src="product.image" :alt="product.name"/>
+      <img :src="product.image" :alt="product.name"/>
     </figure>
-    <div class="price">
+    <div class="price is-pulled-down">
       <div class="">
         <b-input class="input-quantidade"
           type="number"
@@ -60,6 +60,8 @@ export default {
 
 .content-product {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .content-product img{
   max-height: 200px;
@@ -82,14 +84,15 @@ export default {
 }
 
 .price {
+  position: relative;
+  bottom : 0;
   text-align: center;
   display: flex;
   justify-content: flex-start;
-  width: 100%;
 }
 
 .price > div {
-  margin-right: 2rem;
+  margin-right: 1.1rem;
 }
 
 .price input {
