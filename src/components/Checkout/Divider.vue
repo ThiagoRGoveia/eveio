@@ -16,7 +16,6 @@ export default {
   position: relative;
 }
 .divider::before {
-  content: '';
   position: absolute;
   top: 50px;
   left: -50px;
@@ -26,7 +25,6 @@ export default {
 }
 
 .divider::after {
-  content: '';
   position: absolute;
   top: 50%;
   right: 50px;

@@ -11,6 +11,8 @@ import ShoppinList from '@/components/ShoppingList.js';
 import Product from '@/components/ShoppingCart/Product.vue';
 
 export default {
+  name: 'ProductList',
+  props: ['isActive'],
   data() {
     return {
       products: ShoppinList.getItems(),

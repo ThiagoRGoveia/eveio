@@ -6,7 +6,10 @@
       />
       <Header @open="handleOpen"/>
       <div class="main-container">
-        <router-view name="content" :key="$route.fullPath" />
+        <div class="container">
+          <Bradcrumbs />
+          <router-view name="content" :key="$route.fullPath" />
+        </div>
       </div>
       <BottomPart/>
     </div>
@@ -16,6 +19,7 @@
 import BottomPart from '@/components/BottomPart.vue'
 import Header from '@/components/Header.vue'
 import CartContainer from '@/components/ShoppingCart/CartContainer.vue'
+import Bradcrumbs from '@/components/Bradcrumbs.vue'
 
 export default {
   name: 'App',
@@ -35,7 +39,8 @@ export default {
   components: {
     Header,
     BottomPart,
-    CartContainer
+    CartContainer,
+    Bradcrumbs
   }
 }
 </script>

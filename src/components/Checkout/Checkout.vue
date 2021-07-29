@@ -1,38 +1,35 @@
 <template>
-  <form @submit.prevent="handleSubmition">
-    <div class="columns">
-    <div class="column is-1">
-    </div>
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li><a href="#">Tela inicial</a></li>
-        <li><a href="#">Carrinho</a></li>
-        <li class="is-active"><a href="#" aria-current="page">Tela de finalização</a></li>
-      </ul>
-    </nav>
-    </div>
+  <form class="container">
     <div class="container">
       <div class="columns">
-        <div class="column">
+        <div class="column form-container">
           <checkout-form
-            :paymentMethod.sync="paymentMethod"
-            :address.sync="address"
-            :city.sync="city"
-            :state.sync="state"
-            :zipCode.sync="zipCode"
+            :paymentMethod.sync="clientData.paymentMethod"
+            :address.sync="clientData.address"
+            :city.sync="clientData.city"
+            :state.sync="clientData.state"
+            :zipCode.sync="clientData.zipCode"
            />
           <divider />
           <finish-by-phone-number />
         </div>
         <div class="column">
-        </div>
-        <div class="column">
-          <div class="checkout-cart-container">
-            <product-list />
+          <div class="produts">
+            <div class="checkout-cart-container">
+              <product-list />
+            </div>
+            <div class="proceed-to-payment">
+              <router-link :to="{ name: 'payment' }">
+                <b-button
+                  expanded
+                  native-type="submit"
+                  type="is-primary"
+                >
+                  Proceder para Pagamento
+                </b-button>
+              </router-link>
+            </div>
           </div>
-          <router-link :to="{ name: 'payment' }">
-            <b-button native-type="submit" type="is-primary">Proceder para Pagamento</b-button>
-          </router-link>
         </div>
       </div>
     </div>
@@ -45,15 +42,18 @@ import Divider from '@/components/Checkout/Divider.vue'
 import FinishByPhoneNumber from '@/components/Checkout/FinishByPhoneNumber.vue'
 import CheckoutInformation from '@/components/Checkout/CheckoutInformation.js'
 import ProductList from '@/components/ShoppingCart/ProductList'
+
 export default {
   name: 'Checkout',
   data () {
     return {
-      paymentMethod: '',
-      address: '',
-      city: '',
-      state: '',
-      zipCode: '',
+      clientData: {
+        paymentMethod: '',
+        address: '',
+        city: '',
+        state: '',
+        zipCode: '',
+      }
     }
   },
   components: {
@@ -62,32 +62,62 @@ export default {
     FinishByPhoneNumber,
     ProductList
   },
-  methods: {
-    handleSubmition () {
-      CheckoutInformation.setUserData({
-        paymentMethod: this.paymentMethod,
-        address: this.address,
-        city: this.city,
-        state: this.state,
-        zipCode: this.zipCode
-      })
-    }
-  },
   created () {
     const data = CheckoutInformation.getUserData()
     if (Object.keys(data).length > 0) {
-      this.paymentMethod = data.paymentMethod
-      this.address = data.address
-      this.city = data.city
-      this.state = data.state
-      this.zipCode = data.zipCode
+      this.clientData.paymentMethod = data.paymentMethod
+      this.clientData.address = data.address
+      this.clientData.city = data.city
+      this.clientData.state = data.state
+      this.clientData.zipCode = data.zipCode
+    }
+  },
+  watch: {
+    clientData: {
+      handler () {
+        CheckoutInformation.setUserData({
+          paymentMethod: this.clientData.paymentMethod,
+          address: this.clientData.address,
+          city: this.clientData.city,
+          state: this.clientData.state,
+          zipCode: this.clientData.zipCode
+      })
+      },
+      deep: true
     }
   }
 }
 </script>
 
 <style>
- .checkout-cart-container{
-   margin-bottom: 50px;
- }
+  .checkout-cart-container{
+    margin-bottom: 50px;
+  }
+
+  form .produts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form .produts > div {
+    width: 100%;
+  }
+
+  .proceed-to-payment {
+    widows: 100%;
+    padding: 0 1rem;
+  }
+
+  .proceed-to-payment button {
+    height: 3rem;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 </style>

@@ -1,7 +1,8 @@
 <template>
-  <b-field label="Finalize a compra pelo telefone:">
-    <b-button type="is-primary">99999-9999</b-button>
-  </b-field>
+  <div>
+    <p class="label phone-label">Finalize a compra pelo telefone:</p>
+    <b-button expanded type="is-primary">99999-9999</b-button>
+  </div>
 </template>
 
 <script>
@@ -11,5 +12,9 @@ export default {
 </script>
 
 <style>
+
+.phone-label {
+  padding-bottom: 20px;
+}
 
 </style>
